@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}User's Stock Portfolio{% endblock %}
+
+{%block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(names|length) %}
+            <tr>
+                <td>{{ portfolio[i]["symbol"] }}</td>
+                <td>{{ names[i] }}</td>
+                <td>{{ portfolio[i]["shares"] }}</td>
+                <td>{{ shares_price[i] | usd }}</td>
+                <td>{{ shares_holding[i] | usd }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td><form action="/" method="post">
+                    <button type="submit" class="btn btn-primary">Add another $10,000</button>
+                </form></td>
+                <td>{{ cash | usd }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>{{ total_cash | usd }}</b></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

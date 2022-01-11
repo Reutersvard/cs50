@@ -1,0 +1,25 @@
+.mytable {
+  padding: 20px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+td {
+    border: 1px solid white;
+}
+
+.background {
+
+    background-color: #454545;
+    color: white;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+p {
+    margin: 10px;
+}
+
+#instructions {
+    color: darkgray;
+}
